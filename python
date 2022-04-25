@@ -5,15 +5,6 @@ SOURCE_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" || exit; pwd)
 export PYTHONPATH
 PYTHONPATH="$SOURCE_DIR:$PYTHONPATH"
 
-if [[ -z $ANSWER_HOME && -d "$ANSWER_HOME/core" ]]; then
-    PYTHONPATH="$ANSWER_HOME/core:$PYTHONPATH"
-elif [[ $(dirname "$SOURCE_DIR") =~ /core/storage/plugin$ ]]; then
-    CORE_DIR=$(cd "$(dirname "${SOURCE_DIR}")/../.." || exit; pwd)
-    if [[ -n $CORE_DIR ]]; then
-        PYTHONPATH="$CORE_DIR:$PYTHONPATH"
-    fi
-fi
-
 OPY_PATH=$(which opy 2> /dev/null)
 PYTHON3_PATH=$(which python3 2> /dev/null)
 PYTHON_PATH=$(which python 2> /dev/null)
