@@ -8834,6 +8834,15 @@ vue-i18n-extract@1.0.2:
     is-valid-glob "^1.0.0"
     yargs "^13.2.2"
 
+vue-i18n-jest@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vue-i18n-jest/-/vue-i18n-jest-1.1.1.tgz#f4c3ab42a20d17402d004946b9f0e26341d76b8f"
+  integrity sha512-hSxRLJt0Mc2aH8MJnt6cXSFmlSS79A4ji8f7dQzjq4ayurdbqe+FcRBZMpE1nB2I7vc99eOesywPHpaV3vFjow==
+  dependencies:
+    debug "^4.1.1"
+    js-yaml "^3.13.1"
+    json5 "^2.1.1"
+
 vue-i18n@^8.17.0, vue-i18n@^8.26.3:
   version "8.27.1"
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.27.1.tgz#fe660f6c14793ae404d6a715875d772594a3324f"

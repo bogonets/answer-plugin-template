@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueI18n, {LocaleMessages} from 'vue-i18n';
+import VueI18n from 'vue-i18n';
 import en from '@/locales/en';
 import ko from '@/locales/ko';
 

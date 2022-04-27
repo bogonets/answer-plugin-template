@@ -56,6 +56,7 @@
     "typescript": "~4.5.5",
     "vue-cli-plugin-i18n": "~2.3.1",
     "vue-cli-plugin-vuetify": "~2.4.8",
+    "vue-i18n-jest": "^1.1.1",
     "vue-template-compiler": "^2.6.14",
     "vuetify-loader": "^1.7.0"
   },
@@ -108,6 +109,13 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
+    "globals": {
+      "vue-jest": {
+        "transform": {
+          "i18n": "vue-i18n-jest"
+        }
+      }
+    },
     "setupFiles": [
       "./tests/unit/setup.ts"
     ]

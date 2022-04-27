@@ -1,9 +1,10 @@
 import Vue from 'vue';
-import router from '@/router';
-import store from '@/store';
-import vuetify from '@/plugins/vuetify';
-import i18n from '@/plugins/i18n';
-import {config} from '@vue/test-utils';
+import Vuetify from 'vuetify';
+import VueI18n from 'vue-i18n';
+import VueRouter from 'vue-router';
+import Vuex from 'vuex';
 
-config.mocks['$i18n'] = i18n;
-config.mocks['$t'] = i18n.t;
+Vue.use(Vuetify);
+Vue.use(VueI18n);
+Vue.use(VueRouter);
+Vue.use(Vuex);

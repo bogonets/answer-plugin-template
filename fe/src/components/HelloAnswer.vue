@@ -26,14 +26,14 @@ ko:
       </v-col>
 
       <v-col cols="12">
-        <v-btn color="secondary" @click="onClickHello">
+        <v-btn small color="secondary" @click="onClickHello">
           <v-icon left>{{ icons.mdiThemeLightDark }}</v-icon>
           {{ $t('theme') }}
         </v-btn>
       </v-col>
 
       <v-col cols="12">
-        <v-list :dense="dense">
+        <v-list dense>
           <v-list-item-group
             mandatory
             color="primary"
