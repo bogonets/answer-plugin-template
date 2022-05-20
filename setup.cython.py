@@ -3,9 +3,10 @@
 import os
 import re
 from typing import List
-from setuptools import setup, find_packages
-from setuptools.command.build_py import build_py
+
 from Cython.Build import cythonize
+from setuptools import find_packages, setup
+from setuptools.command.build_py import build_py
 
 PLUGIN_NAME = "recc_plugin_annotation"
 

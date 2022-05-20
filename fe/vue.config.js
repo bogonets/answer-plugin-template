@@ -3,6 +3,8 @@ module.exports = defineConfig({
   transpileDependencies: ['vuetify'],
   lintOnSave: false,
 
+  publicPath: './',
+
   pluginOptions: {
     i18n: {
       locale: 'en',

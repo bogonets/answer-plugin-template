@@ -20,7 +20,7 @@ describe('HelloAnswer.vue', () => {
     i18n = new VueI18n({silentTranslationWarn: true});
   });
 
-  it('renders props.title when passed', () => {
+  it('title props', () => {
     const title = 'TEST TITLE';
     const helloTitle = `Welcom to ${title}!`;
     const wrapper = shallowMount(HelloAnswer, {
