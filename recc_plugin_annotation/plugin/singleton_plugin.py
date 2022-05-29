@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from recc.core.context import Context
-
 from recc_plugin_annotation.plugin.plugin import Plugin
 
 
@@ -10,7 +8,7 @@ class SingletonPlugin:
     __singleton_instance__: Plugin
 
     @classmethod
-    def create(cls, context: Context) -> Plugin:
+    def create(cls, context) -> Plugin:
         cls.__singleton_instance__ = Plugin(context)
         return cls.__singleton_instance__
 

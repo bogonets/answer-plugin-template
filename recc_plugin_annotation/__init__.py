@@ -2,9 +2,13 @@
 
 from typing import Callable, List, Tuple
 
-from recc.core.context import Context
+from recc.package.package_utils import get_module_directory
+from recc.translations.translator import TranslatorLangMapper
 
+from recc_plugin_annotation import translations
 from recc_plugin_annotation.plugin.singleton_plugin import SingletonPlugin
+
+t = TranslatorLangMapper.from_dir(get_module_directory(translations))
 
 __version__ = "0.0.1"
 """
@@ -18,18 +22,22 @@ The plugin's documentation string.
 """
 
 __recc_spec__ = {
-    "dependencies": [],
-    "group": {},
-    "project": {
-        "menu": [
+    "permissions": [
+        "recc.plugin.annotation.view",
+    ],
+    "menus": {
+        "project": [
             {
                 "icon": "mdi-image-edit",
+                "name": "Labeling",
                 "path": "/",
+                "permission": "recc.plugin.annotation.view",
+                "translations": t("menu.labeling"),
             }
-        ],
+        ]
     },
     "www": [
-        (".*", "index.html"),
+        (".*", "index.html"),  # SPA reads only one page
     ],
 }
 """
@@ -37,7 +45,7 @@ A specification dictionary for the recc plugin.
 """
 
 
-def on_create(context: Context) -> None:
+def on_create(context) -> None:
     """
     Called immediately after the application launch process completes.
     """

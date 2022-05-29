@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase, main
+
 from recc_plugin_annotation.plugin.singleton_plugin import SingletonPlugin
 
 

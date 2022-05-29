@@ -2,11 +2,9 @@
 
 from typing import Callable, List, Tuple
 
-from recc.core.context import Context
-
 
 class Plugin:
-    def __init__(self, context: Context):
+    def __init__(self, context):
         self.context = context
 
     async def on_open(self) -> None:
