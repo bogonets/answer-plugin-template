@@ -29,15 +29,15 @@ __recc_spec__ = {
         "project": [
             {
                 "icon": "mdi-image-edit",
-                "name": "Labeling",
-                "path": "/",
+                "name": "labeling",
                 "permission": "recc.plugin.annotation.view",
                 "translations": t("menu.labeling"),
             }
         ]
     },
     "www": [
-        (".*", "index.html"),  # SPA reads only one page
+        (r"(.*)", r"\1"),
+        "index.html",
     ],
 }
 """

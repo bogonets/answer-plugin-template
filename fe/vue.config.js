@@ -3,7 +3,7 @@ module.exports = defineConfig({
   transpileDependencies: ['vuetify'],
   lintOnSave: false,
 
-  publicPath: './',
+  publicPath: '', // All resources are requested with relative paths.
 
   pluginOptions: {
     i18n: {
