@@ -6,6 +6,14 @@ import router from '@/router';
 import store from '@/store';
 import vuetify from '@/plugins/vuetify';
 import i18n from '@/plugins/i18n';
+import ReccCwcPluginVuePlugin from '@recc/api/dist/reccCwcPluginVuePlugin';
+
+Vue.use(ReccCwcPluginVuePlugin, {
+  origin: window.origin,
+  onInit: data => {
+    console.debug(`ReccCwcPluginVue.onInit(dark=${data.dark},lang=${data.lang})`);
+  },
+});
 
 Vue.config.productionTip = false;
 

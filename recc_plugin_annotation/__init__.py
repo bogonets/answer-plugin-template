@@ -30,6 +30,7 @@ __recc_spec__ = {
             {
                 "icon": "mdi-image-edit",
                 "name": "labeling",
+                "path": "labeling",
                 "permission": "recc.plugin.annotation.view",
                 "translations": t("menu.labeling"),
             }

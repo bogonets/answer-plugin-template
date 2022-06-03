@@ -2,12 +2,18 @@
 en:
   lang: 'English'
   theme: 'Toggle Dark Mode'
-  hello: 'Welcom to {title}!'
+  hello: '{username}, welcome to {title}!'
+  toast: 'Toast'
+  move: 'Move'
+  fullscreen: 'Fullscreen'
 
 ko:
   lang: '한글'
   theme: '어두운 모드'
-  hello: '{title}에 어서 오세요!'
+  hello: '{username}님, {title}에 어서 오세요!'
+  toast: '토스트'
+  move: '이동'
+  fullscreen: '전체 화면'
 </i18n>
 
 <template>
@@ -21,7 +27,7 @@ ko:
 
       <v-col cols="12">
         <span class="hello-answer">
-          {{ $t('hello', {title}) }}
+          {{ $t('hello', {username, title}) }}
         </span>
       </v-col>
 
@@ -48,6 +54,20 @@ ko:
           </v-list-item-group>
         </v-list>
       </v-col>
+
+      <v-col cols="12">
+        <v-btn class="mr-2" small @click="onClickToast">
+          {{ $t('toast') }}
+        </v-btn>
+
+        <v-btn class="mr-2" small @click="onClickMove">
+          {{ $t('move') }}
+        </v-btn>
+
+        <v-btn small @click="onClickFullscreen">
+          {{ $t('fullscreen') }}
+        </v-btn>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -71,9 +91,18 @@ export default class HelloAnswer extends Vue {
   private title!: string;
 
   langIndex = 0;
+  username = '';
 
   created() {
     this.langIndex = LANGUAGES.indexOf(this.$i18n.locale);
+    this.$recc
+      .waitInitialized()
+      .then(api => {
+        return api.getSelf();
+      })
+      .then(item => {
+        this.username = item.username;
+      });
   }
 
   onClickHello() {
@@ -92,6 +121,18 @@ export default class HelloAnswer extends Vue {
   @Emit('change:lang')
   changeLang(lang: string) {
     return lang;
+  }
+
+  onClickToast() {
+    this.$recc.toastSuccess('TOAST', 'DETAIL');
+  }
+
+  onClickMove() {
+    this.$recc.moveToName('mainDashboard');
+  }
+
+  onClickFullscreen() {
+    this.$recc.flipFullscreenMode();
   }
 }
 </script>
