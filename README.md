@@ -1,1 +1,2 @@
-ANSWER PLUGIN TEMPLATE
+# answer-plugin-template
+
