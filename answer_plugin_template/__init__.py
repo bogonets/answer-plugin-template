@@ -5,8 +5,8 @@ from typing import Callable, List, Tuple
 from recc.package.package_utils import get_module_directory
 from recc.translations.translator import TranslatorLangMapper
 
-from recc_plugin_annotation import translations
-from recc_plugin_annotation.plugin.singleton_plugin import SingletonPlugin
+from answer_plugin_template import translations
+from answer_plugin_template.plugin.singleton_plugin import SingletonPlugin
 
 t = TranslatorLangMapper.from_dir(get_module_directory(translations))
 
@@ -16,27 +16,27 @@ The plug-in version must be specified. Use the semantic versioning specification
 e.g. `MAJOR.MINOR.PATCH`
 """
 
-__doc__ = "Annotation tool plugin for machine learning"
+__doc__ = "Answer Plugin Template Project"
 """
 The plugin's documentation string.
 """
 
 __recc_spec__ = {
     "permissions": [
-        "recc.plugin.annotation.view",
+        "answer.plugin.template.view",
     ],
     "menus": {
         "project": [
             {
                 "icon": "mdi-image-edit",
                 "name": "labeling",
-                "permission": "recc.plugin.annotation.view",
+                "permission": "answer.plugin.template.view",
                 "translations": t("menu.labeling"),
             },
             {
                 "icon": "mdi-help-circle",
                 "name": "about",
-                "permission": "recc.plugin.annotation.view",
+                "permission": "answer.plugin.template.view",
                 "translations": t("menu.about"),
             }
         ]

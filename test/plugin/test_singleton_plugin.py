@@ -2,7 +2,7 @@
 
 from unittest import TestCase, main
 
-from recc_plugin_annotation.plugin.singleton_plugin import SingletonPlugin
+from answer_plugin_template.plugin.singleton_plugin import SingletonPlugin
 
 
 class SingletonPluginTestCase(TestCase):

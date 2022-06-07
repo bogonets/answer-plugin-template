@@ -5,7 +5,7 @@ import AboutView from '@/views/AboutView.vue';
 
 Vue.use(VueRouter);
 
-const publicPath = '/plugins/annotation/';
+const publicPath = '/plugins/template/';
 
 const routes: Array<RouteConfig> = [
   {

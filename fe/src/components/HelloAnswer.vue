@@ -98,6 +98,9 @@ export default class HelloAnswer extends Vue {
     this.$recc
       .waitInitialized()
       .then(api => {
+        this.$i18n.locale = this.$recc.lang;
+        this.$vuetify.theme.dark = this.$recc.dark;
+        this.langIndex = LANGUAGES.indexOf(this.$recc.lang);
         return api.getSelf();
       })
       .then(item => {

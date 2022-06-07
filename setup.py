@@ -6,7 +6,7 @@ from typing import Iterable, List
 
 from setuptools import find_packages, setup
 
-PACKAGE_NAME = "recc_plugin_annotation"
+PACKAGE_NAME = "answer_plugin_template"
 
 SCRIPT_PATH = os.path.abspath(__file__)
 SCRIPT_DIR = os.path.dirname(SCRIPT_PATH)

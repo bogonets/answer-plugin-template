@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from recc_plugin_annotation.plugin.plugin import Plugin
+from answer_plugin_template.plugin.plugin import Plugin
 
 
 class SingletonPlugin:

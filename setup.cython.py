@@ -10,7 +10,7 @@ from setuptools.command.build_py import build_py
 # noinspection PyPackageRequirements
 from Cython.Build import cythonize  # isort:skip
 
-PACKAGE_NAME = "recc_plugin_annotation"
+PACKAGE_NAME = "answer_plugin_template"
 
 SCRIPT_PATH = os.path.abspath(__file__)
 SCRIPT_DIR = os.path.dirname(SCRIPT_PATH)
