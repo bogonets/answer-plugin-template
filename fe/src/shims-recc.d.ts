@@ -1,7 +1,7 @@
-import ReccCwcPlugin from '@recc/api/dist/reccCwcPlugin';
+import {Recc} from '@/recc/recc';
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $recc: ReccCwcPlugin;
+    $recc: Recc;
   }
 }

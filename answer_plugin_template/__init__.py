@@ -24,14 +24,15 @@ The plugin's documentation string.
 __recc_spec__ = {
     "permissions": [
         "answer.plugin.template.view",
+        "answer.plugin.template.edit",
     ],
     "menus": {
         "project": [
             {
-                "icon": "mdi-image-edit",
-                "name": "labeling",
+                "icon": "mdi-home",
+                "name": "home",
                 "permission": "answer.plugin.template.view",
-                "translations": t("menu.labeling"),
+                "translations": t("menu.home"),
             },
             {
                 "icon": "mdi-help-circle",

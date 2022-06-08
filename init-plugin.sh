@@ -19,6 +19,7 @@ FULLNAME_INIT_FILES=(
   "$ROOT_DIR/uninstall.sh"
   "$ROOT_DIR/upgrade.sh"
   "$ROOT_DIR/fe/package.json"
+  "$ROOT_DIR/fe/src/store/storeOptions.ts"
   "$ROOT_DIR/answer_plugin_template/__init__.py"
   "$ROOT_DIR/answer_plugin_template/plugin/singleton_plugin.py"
   "$ROOT_DIR/test/plugin/test_singleton_plugin.py"
@@ -28,16 +29,14 @@ for f in ${FULLNAME_INIT_FILES[*]}; do
   sed -i.tmp -e "s/answer\([\._-]\)plugin\([\._-]\)template/answer\\1plugin\\2$PLUGIN_NAME/g" "$f"
 done
 
-ROUTER_FILE="$ROOT_DIR/fe/src/router/index.ts"
-ROUTER_EXPRESSION="s|^const publicPath = '/plugins/template/';|const publicPath = '/plugins/$PLUGIN_NAME/';|g"
+ROUTER_FILE="$ROOT_DIR/fe/package.json"
+ROUTER_EXPRESSION="s|\"publicPath\": \"/plugins/template/\"|\"publicPath\": \"/plugins/$PLUGIN_NAME/\"|"
 sed -i.tmp -e "$ROUTER_EXPRESSION" "$ROUTER_FILE"
 
 mv -v "$ROOT_DIR/answer_plugin_template" "$ROOT_DIR/answer_plugin_$PLUGIN_NAME"
 
-read -r -p "Remove all *.tmp files? (y/n) " YN
-if [[ $YN == 'y' || $YN == 'Y' ]]; then
-  find . -name '*.tmp' -exec rm -v {} \;
-fi
+echo "Remove all *.tmp files ..."
+find . -name '*.tmp' -exec rm -v {} \;
 
 read -r -p "Remove init-plugin.sh file? (y/n) " YN
 if [[ $YN == 'y' || $YN == 'Y' ]]; then

@@ -1,3 +1,11 @@
+<i18n lang="yaml">
+en:
+  about: 'About Page'
+
+ko:
+  about: '어바웃 페이지'
+</i18n>
+
 <template>
   <v-container>
     <v-row class="text-center">
@@ -8,7 +16,7 @@
       </v-col>
 
       <v-col cols="12">
-        <span>About Page</span>
+        <span>{{ $t('about') }}</span>
       </v-col>
     </v-row>
   </v-container>

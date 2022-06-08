@@ -1,22 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import VueLocalStore from '@/store/localStore';
+import VueSessionStore from '@/store/sessionStore';
 
 Vue.use(Vuex);
-
-export default new Vuex.Store({
-  state: {
-    // EMPTY.
-  },
-  getters: {
-    // EMPTY.
-  },
-  mutations: {
-    // EMPTY.
-  },
-  actions: {
-    // EMPTY.
-  },
-  modules: {
-    // EMPTY.
-  },
-});
+Vue.use(VueLocalStore);
+Vue.use(VueSessionStore);

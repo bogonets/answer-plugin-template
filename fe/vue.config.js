@@ -1,9 +1,12 @@
 const {defineConfig} = require('@vue/cli-service');
+const publicPath = require('./package.json').publicPath;
+
 module.exports = defineConfig({
   transpileDependencies: ['vuetify'],
   lintOnSave: false,
 
-  publicPath: '', // All resources are requested with relative paths.
+  // All resources are requested with relative paths.
+  publicPath: process.env.NODE_ENV === 'production' ? publicPath : '/',
 
   pluginOptions: {
     i18n: {
@@ -13,5 +16,9 @@ module.exports = defineConfig({
       enableInSFC: true,
       enableBridge: false,
     },
+  },
+
+  devServer: {
+    historyApiFallback: true,
   },
 });
