@@ -39,7 +39,7 @@ __recc_spec__ = {
                 "name": "about",
                 "permission": "answer.plugin.template.view",
                 "translations": t("menu.about"),
-            }
+            },
         ]
     },
     "www": [
