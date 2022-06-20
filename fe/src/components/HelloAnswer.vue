@@ -94,15 +94,10 @@ export default class HelloAnswer extends Vue {
   username = '';
 
   created() {
-    this.langIndex = LANGUAGES.indexOf(this.$i18n.locale);
-    this.$recc
-      .waitInitialized()
-      .then(api => {
-        this.$i18n.locale = this.$recc.lang;
-        this.$vuetify.theme.dark = this.$recc.dark;
-        this.langIndex = LANGUAGES.indexOf(this.$recc.lang);
-        return api.getSelf();
-      })
+    this.$i18n.locale = this.$recc.lang;
+    this.$vuetify.theme.dark = this.$recc.dark;
+    this.langIndex = LANGUAGES.indexOf(this.$recc.lang);
+    this.$recc.api.getSelf()
       .then(item => {
         this.username = item.username;
       });
