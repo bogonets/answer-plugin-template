@@ -1,8 +1,18 @@
+<i18n lang="yaml">
+en:
+  title: 'ANSWER PLUGIN'
+
+ko:
+  title: '엔서 플러그인'
+</i18n>
+
 <template>
   <hello-answer
-    title="ANSWER PLUGIN"
-    @change:dark="onChangeDark"
-    @change:lang="onChangeLang"
+    :title="title"
+    :username="username"
+    @click:move="onClickMove"
+    @click:toast="onClickToast"
+    @click:fullscreen="onClickFullscreen"
   ></hello-answer>
 </template>
 
@@ -16,13 +26,26 @@ import HelloAnswer from '@/components/HelloAnswer.vue';
   },
 })
 export default class HomeView extends Vue {
-  onChangeDark(dark: boolean) {
-    this.$vuetify.theme.dark = dark;
+  title = '';
+  username = '';
+
+  created() {
+    this.title = this.$t('title').toString();
+    this.$recc.api.getSelf().then(item => {
+      this.username = item.username;
+    });
   }
 
-  onChangeLang(lang: string) {
-    this.$i18n.locale = lang;
-    this.$vuetify.lang.current = lang;
+  onClickToast() {
+    this.$recc.toastSuccess('TOAST', 'DETAIL');
+  }
+
+  onClickMove() {
+    this.$recc.moveToName('mainDashboard');
+  }
+
+  onClickFullscreen() {
+    this.$recc.flipFullscreenMode();
   }
 }
 </script>

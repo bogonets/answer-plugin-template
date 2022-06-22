@@ -12,7 +12,6 @@ Vue.config.productionTip = false;
 
 (async () => {
   if (process.env.NODE_ENV === 'production') {
-    globalRecc.ready();
     console.debug('[recc] plugin wait init ...');
     await globalRecc.waitInitialized();
   } else {
@@ -20,11 +19,16 @@ Vue.config.productionTip = false;
     await globalRecc.debug();
   }
 
-  const g = globalRecc.group;
-  const p = globalRecc.project;
-  const l = globalRecc.lang;
-  const d = globalRecc.dark;
-  console.debug(`[recc] init done (group=${g},project=${p},lang=${l},dark=${d})`);
+  const group = globalRecc.group;
+  const project = globalRecc.project;
+  const lang = globalRecc.lang;
+  const dark = globalRecc.dark;
+  const paramsText = `group=${group},project=${project},lang=${lang},dark=${dark}`;
+  console.debug(`[recc] init done (${paramsText})`);
+
+  i18n.locale = lang;
+  vuetify.framework.lang.current = lang;
+  vuetify.framework.theme.dark = dark;
 
   new Vue({
     router,

@@ -32,27 +32,7 @@ ko:
       </v-col>
 
       <v-col cols="12">
-        <v-btn small color="secondary" @click="onClickHello">
-          <v-icon left>{{ icons.mdiThemeLightDark }}</v-icon>
-          {{ $t('theme') }}
-        </v-btn>
-      </v-col>
-
-      <v-col cols="12">
-        <v-list dense>
-          <v-list-item-group
-            mandatory
-            color="primary"
-            v-model="langIndex"
-            @change="onChangeLang"
-          >
-            <v-list-item v-for="lang in languages" :key="lang">
-              <v-list-item-content>
-                <v-list-item-title v-text="$t('lang', lang)"></v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
+        <v-icon large>{{ icons.mdiThemeLightDark }}</v-icon>
       </v-col>
 
       <v-col cols="12">
@@ -77,60 +57,30 @@ import {Vue, Component, Prop, Emit} from 'vue-property-decorator';
 import {mdiThemeLightDark} from '@mdi/js';
 import logo from '@/assets/logo.svg';
 
-export const LANG_EN = 'en';
-export const LANG_KO = 'ko';
-export const LANGUAGES = [LANG_EN, LANG_KO];
-
 @Component
 export default class HelloAnswer extends Vue {
-  private readonly languages = LANGUAGES;
   private readonly assets = {logo};
   private readonly icons = {mdiThemeLightDark};
 
-  @Prop({type: String, default: 'ANSWER'})
+  @Prop({type: String, default: ''})
   private title!: string;
 
-  langIndex = 0;
-  username = '';
+  @Prop({type: String, default: ''})
+  private username!: string;
 
-  created() {
-    this.$i18n.locale = this.$recc.lang;
-    this.$vuetify.theme.dark = this.$recc.dark;
-    this.langIndex = LANGUAGES.indexOf(this.$recc.lang);
-    this.$recc.api.getSelf()
-      .then(item => {
-        this.username = item.username;
-      });
-  }
-
-  onClickHello() {
-    this.changeDark(!this.$vuetify.theme.dark);
-  }
-
-  onChangeLang(index: number) {
-    this.changeLang(this.languages[index]);
-  }
-
-  @Emit('change:dark')
-  changeDark(dark: boolean) {
-    return dark;
-  }
-
-  @Emit('change:lang')
-  changeLang(lang: string) {
-    return lang;
-  }
-
+  @Emit('click:toast')
   onClickToast() {
-    this.$recc.toastSuccess('TOAST', 'DETAIL');
+    // EMPTY.
   }
 
+  @Emit('click:move')
   onClickMove() {
-    this.$recc.moveToName('mainDashboard');
+    // EMPTY.
   }
 
+  @Emit('click:fullscreen')
   onClickFullscreen() {
-    this.$recc.flipFullscreenMode();
+    // EMPTY.
   }
 }
 </script>
