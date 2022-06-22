@@ -19,7 +19,12 @@ Vue.config.productionTip = false;
     console.debug('[recc] plugin debug');
     await globalRecc.debug();
   }
-  console.debug('[recc] init done');
+
+  const g = globalRecc.group;
+  const p = globalRecc.project;
+  const l = globalRecc.lang;
+  const d = globalRecc.dark;
+  console.debug(`[recc] init done (group=${g},project=${p},lang=${l},dark=${d})`);
 
   new Vue({
     router,

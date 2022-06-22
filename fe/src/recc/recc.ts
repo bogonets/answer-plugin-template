@@ -11,12 +11,7 @@ export class Recc extends ReccCwcPlugin {
   // TODO: More APIs
 }
 
-export const globalRecc = new Recc({
-  origin: window.origin,
-  onInit: data => {
-    console.debug(`On init recc plugin (dark=${data.dark},lang=${data.lang})`);
-  },
-});
+export const globalRecc = new Recc({origin: window.origin});
 
 export class ReccVuePluginObject implements PluginObject<ReccCwcPluginOptions> {
   install(Vue: typeof VueInterface) {
