@@ -31,12 +31,14 @@ __recc_spec__ = {
             {
                 "icon": "mdi-home",
                 "name": "home",
+                "path": "/home",
                 "permission": "answer.plugin.template.view",
                 "translations": t("menu.home"),
             },
             {
                 "icon": "mdi-help-circle",
                 "name": "about",
+                "path": "/about",
                 "permission": "answer.plugin.template.view",
                 "translations": t("menu.about"),
             },

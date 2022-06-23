@@ -1,4 +1,7 @@
 import Vue from 'vue';
-import VueRecc from '@/recc/recc';
+import Recc from '@/recc/recc';
 
-Vue.use(VueRecc);
+const recc = new Recc();
+Vue.use(recc);
+
+export default recc;
