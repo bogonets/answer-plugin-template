@@ -30,12 +30,12 @@ ROUTER_FILE="$ROOT_DIR/fe/package.json"
 ROUTER_EXPRESSION="s|\"publicPath\": \"/plugins/template/\"|\"publicPath\": \"/plugins/$PLUGIN_NAME/\"|"
 sed -i.tmp -e "$ROUTER_EXPRESSION" "$ROUTER_FILE"
 
-mv -v "$ROOT_DIR/answer_plugin_template" "$ROOT_DIR/answer_plugin_$PLUGIN_NAME"
+mv -v "$ROOT_DIR/plugin/answer_plugin_template" "$ROOT_DIR/plugin/answer_plugin_$PLUGIN_NAME"
 
 echo "Remove all *.tmp files ..."
 find . -name '*.tmp' -exec rm -v {} \;
 
-read -r -p "Remove init-plugin.sh file? (y/n) " YN
+read -r -p "Remove init.sh file? (y/n) " YN
 if [[ $YN == 'y' || $YN == 'Y' ]]; then
-    rm -v "$ROOT_DIR/init-plugin.sh"
+    rm -v "$ROOT_DIR/init.sh"
 fi
