@@ -1,0 +1,3 @@
+include answer_plugin_template/translations/*.yaml
+include answer_plugin_template/translations/*.yml
+recursive-include answer_plugin_template/www *

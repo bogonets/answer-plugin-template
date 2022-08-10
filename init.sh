@@ -9,6 +9,7 @@ FULLNAME_INIT_FILES=(
     "$ROOT_DIR/fe/README.md"
     "$ROOT_DIR/fe/package.json"
     "$ROOT_DIR/fe/src/store/storeOptions.ts"
+    "$ROOT_DIR/plugin/MANIFEST.in"
     "$ROOT_DIR/plugin/README.md"
     "$ROOT_DIR/plugin/answer_plugin_template/__init__.py"
     "$ROOT_DIR/plugin/black.sh"

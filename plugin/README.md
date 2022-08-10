@@ -2,34 +2,32 @@
 
 Python plugin for the ANSWER backend.
 
-## Script usage
+## Formatting
 
-### Formatting
-```
+```.shell
 bash black.sh
 ```
 
-### PEP8
-```
+## PEP8
+
+```.shell
 bash flake8.sh
 ```
 
-### Import ordering
-```
+## Import ordering
+
+```.shell
 bash isort.sh
 ```
 
-### Type analysis
-```
+## Type analysis
+
+```.shell
 bash mypy.sh
 ```
 
-### Testing
-```
+## Testing
+
+```.shell
 bash pytest.sh
 ```
-
-## License
-
-See the [LICENSE](./LICENSE) file for details. In summary,
-**answer-plugin-template** is licensed under the **MIT license**.
