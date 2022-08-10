@@ -1,4 +1,4 @@
-# fe
+# frontend web for answer-plugin-template
 
 ## Project setup
 ```
@@ -30,5 +30,7 @@ yarn test:e2e
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Link @recc/api package
+```
+yarn link:api
+```

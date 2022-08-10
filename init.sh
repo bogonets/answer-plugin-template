@@ -6,6 +6,7 @@ read -r -p "Please enter a plugin name: answer-plugin-" PLUGIN_NAME
 
 FULLNAME_INIT_FILES=(
     "$ROOT_DIR/README.md"
+    "$ROOT_DIR/fe/README.md"
     "$ROOT_DIR/fe/package.json"
     "$ROOT_DIR/fe/src/store/storeOptions.ts"
     "$ROOT_DIR/plugin/README.md"
