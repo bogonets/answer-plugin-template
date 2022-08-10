@@ -7,7 +7,8 @@
     "build": "vue-cli-service build --no-clean --dest ../plugin/answer_plugin_template/www",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "link:api": "yarn link @recc/api"
   },
   "dependencies": {
     "@recc/api": "^2.0.0-dev9-2",
