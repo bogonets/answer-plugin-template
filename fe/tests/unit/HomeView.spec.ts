@@ -20,16 +20,17 @@ describe('HelloAnswer.vue', () => {
     i18n = new VueI18n({silentTranslationWarn: true});
   });
 
-  it('title props', () => {
+  it('Title props', () => {
     const title = 'TEST TITLE';
-    const helloTitle = `Welcom to ${title}!`;
+    const username = 'USER';
+    const helloTitle = `${username}, welcome to ${title}!`;
     const wrapper = shallowMount(HelloAnswer, {
       localVue,
       router,
       store,
       vuetify,
       i18n,
-      propsData: {title},
+      propsData: {username, title},
     });
 
     expect(wrapper.find('.hello-answer').text()).toMatch(helloTitle);
