@@ -15,7 +15,7 @@
     "baseUrl": ".",
     "noImplicitAny": false,
     "resolveJsonModule": true,
-    "types": ["webpack-env", "jest"],
+    "types": ["webpack-env", "jest", "cypress"],
     "paths": {
       "@/*": ["src/*"]
     },

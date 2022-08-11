@@ -4,10 +4,7 @@ const publicPath = require('./package.json').publicPath;
 module.exports = defineConfig({
   transpileDependencies: ['vuetify'],
   lintOnSave: false,
-
-  // All resources are requested with relative paths.
-  publicPath: process.env.NODE_ENV === 'production' ? publicPath : '/',
-
+  publicPath,
   pluginOptions: {
     i18n: {
       locale: 'en',
@@ -17,8 +14,14 @@ module.exports = defineConfig({
       enableBridge: false,
     },
   },
-
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      rewrites: [
+        {
+          from: new RegExp(publicPath.replaceAll('/', '\\/') + '.*'),
+          to: publicPath + 'index.html',
+        },
+      ],
+    },
   },
 });

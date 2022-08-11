@@ -5,8 +5,7 @@ import Recc from '@/recc/recc';
 
 const recc = new Recc();
 
-class ReccPlugin implements PluginObject<ReccCwcPluginOptions>
-{
+class ReccPlugin implements PluginObject<ReccCwcPluginOptions> {
   static installed = false;
 
   install(vue: typeof Vue) {

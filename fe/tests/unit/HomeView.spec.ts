@@ -20,7 +20,7 @@ describe('HelloAnswer.vue', () => {
     i18n = new VueI18n({silentTranslationWarn: true});
   });
 
-  it('Title props', () => {
+  it('Title Props', () => {
     const title = 'TEST TITLE';
     const username = 'USER';
     const helloTitle = `${username}, welcome to ${title}!`;
