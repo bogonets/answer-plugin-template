@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import type {PluginObject} from 'vue/types/plugin';
-import type {ReccCwcPluginOptions} from '@recc/api/dist/reccCwcPlugin';
+import type {ReccCwcClientOptions} from '@recc/api/dist/reccCwcClient';
 import Recc from '@/recc/recc';
 
 const recc = new Recc();
 
-class ReccPlugin implements PluginObject<ReccCwcPluginOptions> {
+class ReccPlugin implements PluginObject<ReccCwcClientOptions> {
   static installed = false;
 
   install(vue: typeof Vue) {

@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 import PackageJson from '@/../package.json';
-import HomeView from '@/views/HomeView.vue';
-import AboutView from '@/views/AboutView.vue';
-import NotFoundError from '@/views/error/NotFoundError.vue';
+import Home from '@/pages/Home.vue';
+import About from '@/pages/About.vue';
+import NotFound from '@/pages/error/NotFound.vue';
 
 Vue.use(VueRouter);
 
@@ -12,6 +12,7 @@ export const routeNames = {
   mainAbout: 'mainAbout',
 };
 
+const mode = 'history';
 const base = PackageJson.publicPath;
 const routes: Array<RouteConfig> = [
   {
@@ -23,21 +24,21 @@ const routes: Array<RouteConfig> = [
   {
     path: '/home',
     name: routeNames.mainHome,
-    component: HomeView,
+    component: Home,
   },
   {
     path: '/about',
     name: routeNames.mainAbout,
-    component: AboutView,
+    component: About,
   },
   {
     path: '*',
-    component: NotFoundError,
+    component: NotFound,
   },
 ];
 
 export default new VueRouter({
-  mode: 'history',
+  mode,
   base,
   routes,
 });

@@ -59,8 +59,8 @@ import logo from '@/assets/logo.svg';
 
 @Component
 export default class HelloAnswer extends Vue {
-  private readonly assets = {logo};
-  private readonly icons = {mdiThemeLightDark};
+  readonly assets = {logo};
+  readonly icons = {mdiThemeLightDark};
 
   @Prop({type: String, default: ''})
   private title!: string;

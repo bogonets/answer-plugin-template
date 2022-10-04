@@ -27,7 +27,7 @@ import {Vue, Component} from 'vue-property-decorator';
 import logo from '@/assets/logo.svg';
 
 @Component
-export default class AboutView extends Vue {
-  private readonly assets = {logo};
+export default class About extends Vue {
+  readonly assets = {logo};
 }
 </script>

@@ -25,7 +25,7 @@ import HelloAnswer from '@/components/HelloAnswer.vue';
     HelloAnswer,
   },
 })
-export default class HomeView extends Vue {
+export default class Home extends Vue {
   title = '';
   username = '';
 

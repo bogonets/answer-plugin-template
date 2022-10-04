@@ -11,7 +11,7 @@
     "link:api": "yarn link @recc/api"
   },
   "dependencies": {
-    "@recc/api": "^2.0.0-dev9-2",
+    "@recc/api": "^2.0.2-2",
     "core-js": "^3.8.3",
     "global": "^4.4.0",
     "lodash": "^4.17.21",

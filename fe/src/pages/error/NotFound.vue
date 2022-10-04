@@ -37,7 +37,7 @@ import {Vue, Component} from 'vue-property-decorator';
 import {moveToBack} from '@/router/move';
 
 @Component
-export default class NotFoundError extends Vue {
+export default class NotFound extends Vue {
   onClickBack() {
     moveToBack();
   }
