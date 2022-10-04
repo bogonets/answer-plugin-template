@@ -11,7 +11,7 @@
           indeterminate
           rounded
         ></v-progress-linear>
-        <router-view></router-view>
+        <router-view v-if="init"></router-view>
       </div>
       <div v-else>
         <!-------------------------->
@@ -77,6 +77,8 @@ import type {ReccCwcClientInit} from '@recc/api/dist/reccCwcClient';
 import {routeNames} from '@/router';
 import {moveTo} from '@/router/move';
 
+const DEFAULT_INITIALIZE_TIMEOUT_MILLISECONDS = 1000;
+
 function isProductionMode() {
   return process.env.NODE_ENV === 'production';
 }
@@ -105,10 +107,10 @@ export default class App extends Vue {
     }
   }
 
-  async initProduction() {
+  async initProduction(timeout = DEFAULT_INITIALIZE_TIMEOUT_MILLISECONDS) {
     try {
-      console.debug('[App] Initializing production mode ...');
-      await this.$recc.waitInitialized();
+      console.debug(`[App] Initializing production mode ${timeout}ms ...`);
+      await this.$recc.waitInitialized(timeout);
 
       console.info(
         '[App] Initialization of production mode complete',
