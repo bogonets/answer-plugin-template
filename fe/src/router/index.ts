@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, {RouteConfig} from 'vue-router';
 import PackageJson from '@/../package.json';
+
 import Home from '@/pages/Home.vue';
 import About from '@/pages/About.vue';
 import NotFound from '@/pages/error/NotFound.vue';
